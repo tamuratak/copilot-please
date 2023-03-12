@@ -1,4 +1,6 @@
 out/
+*.vsix
+/.vscode-test/
 
 # Logs
 logs
