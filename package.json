@@ -4,7 +4,7 @@
   "version": "0.1.1",
   "publisher": "tamuratak",
   "license": "MIT",
-  "description": "Tweak GitHub Copilot",
+  "description": "An extension to tweak GitHub Copilot",
   "homepage": "https://github.com/tamuratak/copilot-please",
   "main": "./out/src/main.js",
   "repository": {
