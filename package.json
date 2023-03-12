@@ -1,0 +1,62 @@
+{
+  "name": "copilot-please",
+  "displayName": "Copilot, please",
+  "version": "0.1.0",
+  "publisher": "tamuratak",
+  "license": "MIT",
+  "description": "Tweak GitHub Copilot",
+  "homepage": "https://github.com/tamuratak/copilot-please",
+  "main": "./out/src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamuratak/copilot-please.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilot-please.disableInlineSuggest",
+        "title": "Copilot, please: be quiet for a whild"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "copilot-please.disableInlineSuggest",
+        "key": "shift+escape",
+        "when": "inlineSuggestionVisible"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onFileSystem:file",
+    "onCommand:able.closeTerminalAndOpenSideBar",
+    "onCommand:able.openTerminalAndCloseSideBar",
+    "onCommand:able.terminalNew",
+    "onCommand:able.focusTerminal"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16",
+    "@types/vscode": "1.75.0",
+    "@typescript-eslint/eslint-plugin": "5.54.1",
+    "@typescript-eslint/parser": "5.54.1",
+    "eslint": "8.36.0",
+    "typescript": "4.9.5",
+    "vsce": "2.15.0"
+  },
+  "files": [
+    "out/**/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "build": "npm run compile",
+    "compile": "tsc -p ./",
+    "clean": "rm -rf out/src/* out/test/*",
+    "lint": "eslint --cache --ext .ts .",
+    "lint:fix": "eslint --fix --ext .ts .",
+    "release": "npm run clean && npm run lint && npm run compile && vsce package",
+    "watch": "tsc -w -p ./"
+  }
+}
