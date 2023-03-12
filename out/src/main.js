@@ -36,6 +36,7 @@ class Extension {
             vscode.commands.registerCommand('copilot-please.disableInlineSuggest', () => {
                 const configuration = vscode.workspace.getConfiguration('editor');
                 configuration.update('inlineSuggest.enabled', false);
+                vscode.commands.executeCommand('editor.action.inlineSuggest.hide');
                 setTimeout(() => {
                     configuration.update('inlineSuggest.enabled', true);
                 }, 10000);
