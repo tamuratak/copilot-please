@@ -16,7 +16,7 @@ class Extension {
                 configuration.update('inlineSuggest.enabled', false)
                 vscode.commands.executeCommand('editor.action.inlineSuggest.hide')
                 setTimeout(() => {
-                    configuration.update('inlineSuggest.enabled', true)
+                    configuration.update('inlineSuggest.enabled', true, vscode.ConfigurationTarget.Global)
                 }, 10000)
             })
         ]
