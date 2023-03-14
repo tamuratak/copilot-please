@@ -13,7 +13,7 @@ class Extension {
         return [
             vscode.commands.registerCommand('copilot-please.disableInlineSuggest', () => {
                 const configuration = vscode.workspace.getConfiguration('editor')
-                configuration.update('inlineSuggest.enabled', false)
+                configuration.update('inlineSuggest.enabled', false, vscode.ConfigurationTarget.Global)
                 vscode.commands.executeCommand('editor.action.inlineSuggest.hide')
                 setTimeout(() => {
                     configuration.update('inlineSuggest.enabled', true, vscode.ConfigurationTarget.Global)
